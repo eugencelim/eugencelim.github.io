@@ -1,7 +1,6 @@
 import {writable} from "svelte/store"
 
-//test 
-export let products = writable([{
+let rawData = [{
     "id":1,
     "name":"Huawei Smart Phone",
     "price":1500.00,
@@ -56,8 +55,10 @@ export let products = writable([{
     "seller":"Signature Market",
     "category":"Food",
     "img":"https://picsum.photos/200"
-}])
+}]
+//test 
+export let products = writable(rawData)
 
-export let searched_products = writable([])
-export let filtered_products = writable([])
+export let searched_products = writable(rawData)
+export let filtered_products = writable(rawData)
 export let cart_items = writable(new Map())

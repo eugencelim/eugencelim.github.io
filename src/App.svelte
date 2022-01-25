@@ -11,6 +11,7 @@
 	// import { PictureSelector} from "./components/PictureSelector.svelte"
 	import { onMount } from "svelte";
 	
+	//node ./gh-pages.js
 	let isFilterShow = false;
 
 	function toggleFilter(){

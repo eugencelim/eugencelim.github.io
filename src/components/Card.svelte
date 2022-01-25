@@ -50,7 +50,7 @@
     //cart design = id, count
 </script>
 
-<div class="card m-auto">
+<div class="card m-auto my-1 shadow">
     <img class="card-img-top" src={productImg} alt="Product Image for {productName}"/>
     <div class="card-body">
         <div class="row">
