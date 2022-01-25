@@ -1,5 +1,6 @@
 import {writable} from "svelte/store"
 
+//test 
 export let products = writable([{
     "id":1,
     "name":"Huawei Smart Phone",
