@@ -4499,13 +4499,14 @@ var app = (function () {
     			attr_dev(div4, "class", "row");
     			add_location(div4, file, 63, 2, 2068);
     			attr_dev(label, "for", "imageFile");
+    			attr_dev(label, "class", "fs-3");
     			add_location(label, file, 67, 3, 2137);
     			attr_dev(input, "type", "file");
     			attr_dev(input, "id", "imageFile");
     			attr_dev(input, "capture", "user");
     			attr_dev(input, "accept", "image/*");
     			attr_dev(input, "class", "form-control");
-    			add_location(input, file, 68, 3, 2187);
+    			add_location(input, file, 68, 3, 2200);
     			attr_dev(div5, "class", "row");
     			add_location(div5, file, 66, 2, 2112);
     			attr_dev(div6, "class", "container p-2");

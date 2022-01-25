@@ -1,36 +1,36 @@
 {
-    "short_name": "autocustos",
-    "name": "Calculadora dos Custos do Automóvel",
+    "short_name": "SW-Proto",
+    "name": "Service Worker Prototype",
     "icons": [
       {
-        "src": "https://picsum.photos/32",
+        "src": "/static/img/android-chrome-512x512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      },
+      {
+        "src": "/static/img/android-chrome-192x192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "/favicon.ico",
+        "type": "image/ico",
+        "sizes": "48x48"
+      },
+      {
+        "src": "/static/img/favicon-32x32.png",
         "type": "image/png",
         "sizes": "32x32"
       },
       {
-        "src": "https://picsum.photos/72",
+        "src": "/static/img/favicon-16x16.png",
         "type": "image/png",
-        "sizes": "72x72"
-      },
-      {
-        "src": "https://picsum.photos/114",
-        "type": "image/png",
-        "sizes": "114x114"
-      },
-      {
-        "src": "https://picsum.photos/144",
-        "type": "image/png",
-        "sizes": "144x144"
-      },
-      {
-        "src": "https://picsum.photos/192",
-        "type": "image/png",
-        "sizes": "192x192"
+        "sizes": "16x16"
       }
     ],
     "start_url": "/",
     "scope": "/",
-    "background_color": "#F4F6FE",
+    "background_color": "#FFFFFF",
     "display": "fullscreen",
     "theme_color": "#F4F6FE"
   }
