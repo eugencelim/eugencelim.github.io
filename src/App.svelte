@@ -7,8 +7,7 @@
 	import Cart from "./components/Cart.svelte"
 	import Modal from "./components/Modal.svelte";
 	import Sort from "./components/Sort.svelte";
-	import {slide} from "svelte/transition";
-	import {fetchApiData} from "./components/fetch"
+	import {slide} from "svelte/transition";	
 	// import { PictureSelector} from "./components/PictureSelector.svelte"
 	import { onMount } from "svelte";
 	
@@ -18,18 +17,8 @@
 		isFilterShow = !isFilterShow;
 	}
 	
-	onMount(() => {
-		retrieveData();
-	})
-
-	async function retrieveData(){
-		let res = await fetchApiData('http://192.168.0.179:8000/api/products/');
-		products.set(res);
-	}
-
 	function displayNotification() {
-    	if (Notification.permission == 'granted') {
-			console.log("Tesatgm")
+    	if (Notification.permission == 'granted') {			
 			navigator.serviceWorker.getRegistration().then(function(reg) {
 				reg.showNotification("Testing");
 			});
