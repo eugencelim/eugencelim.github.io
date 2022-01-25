@@ -65,7 +65,7 @@
 			<List />
 		</div>
 		<div class="row">			
-			<label for="imageFile">Upload a photo</label>
+			<label for="imageFile" class="fs-3">Upload a photo</label>
 			<input type="file" id="imageFile" capture="user" accept="image/*" class="form-control">
 		</div>
 	</div>
