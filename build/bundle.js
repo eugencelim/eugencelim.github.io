@@ -4508,6 +4508,7 @@ var app = (function () {
     			attr_dev(input, "capture", "user");
     			attr_dev(input, "accept", "image/*");
     			attr_dev(input, "class", "form-control");
+    			input.multiple = true;
     			add_location(input, file, 69, 3, 2223);
     			attr_dev(div5, "class", "row");
     			add_location(div5, file, 67, 2, 2135);
