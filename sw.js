@@ -3,6 +3,15 @@
 self.addEventListener('install',function(e){
     console.log(e);
     console.log("Service Worker Installed.");
+    e.waitUntil(
+        caches.open("static_res").then(function(cache){
+            return cache.addAll(
+                [
+                  '/index.html'
+                ]
+              );
+        })
+    )
 })
 
 //Activate
