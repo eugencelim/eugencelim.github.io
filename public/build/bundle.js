@@ -4288,7 +4288,7 @@ var app = (function () {
     	return block;
     }
 
-    // (74:1) <Modal modalId=addProductModal>
+    // (95:1) <Modal modalId=addProductModal>
     function create_default_slot_1(ctx) {
     	let form;
     	let current;
@@ -4320,14 +4320,14 @@ var app = (function () {
     		block,
     		id: create_default_slot_1.name,
     		type: "slot",
-    		source: "(74:1) <Modal modalId=addProductModal>",
+    		source: "(95:1) <Modal modalId=addProductModal>",
     		ctx
     	});
 
     	return block;
     }
 
-    // (78:1) <Modal modalId=cartModal size=1>
+    // (99:1) <Modal modalId=cartModal size=1>
     function create_default_slot(ctx) {
     	let cart;
     	let current;
@@ -4359,7 +4359,7 @@ var app = (function () {
     		block,
     		id: create_default_slot.name,
     		type: "slot",
-    		source: "(78:1) <Modal modalId=cartModal size=1>",
+    		source: "(99:1) <Modal modalId=cartModal size=1>",
     		ctx
     	});
 
@@ -4368,7 +4368,7 @@ var app = (function () {
 
     function create_fragment(ctx) {
     	let main;
-    	let div6;
+    	let div7;
     	let h2;
     	let t1;
     	let button0;
@@ -4393,13 +4393,17 @@ var app = (function () {
     	let div4;
     	let list;
     	let t12;
-    	let div5;
+    	let div6;
     	let label;
     	let t14;
     	let input;
     	let t15;
-    	let modal0;
+    	let div5;
     	let t16;
+    	let script;
+    	let t18;
+    	let modal0;
+    	let t19;
     	let modal1;
     	let current;
     	let mounted;
@@ -4435,7 +4439,7 @@ var app = (function () {
     	const block = {
     		c: function create() {
     			main = element("main");
-    			div6 = element("div");
+    			div7 = element("div");
     			h2 = element("h2");
     			h2.textContent = "Product Available";
     			t1 = space();
@@ -4464,14 +4468,19 @@ var app = (function () {
     			div4 = element("div");
     			create_component(list.$$.fragment);
     			t12 = space();
-    			div5 = element("div");
+    			div6 = element("div");
     			label = element("label");
     			label.textContent = "Upload a photo";
     			t14 = space();
     			input = element("input");
     			t15 = space();
-    			create_component(modal0.$$.fragment);
+    			div5 = element("div");
     			t16 = space();
+    			script = element("script");
+    			script.textContent = "document.getElementById(\"imageFile\").addEventListener(\"change\",function(){\r\n\t\t\t\treadURL(this)\r\n\t\t\t})\r\n\r\n\t\t\tfunction readURL(input) {\r\n\t\t\t\tif (input.files && input.files[0]) {\r\n\t\t\t\t\tvar reader = new FileReader();\r\n\t\t\t\t\treader.onload = function (e) {\r\n\t\t\t\t\t\thtml = `<div class=\"m-2 col\"><img src=\"${e.target.result}\" class=\"img-fluid\"/></div>`\r\n\t\t\t\t\t\t$(\"#photos\").append(html)\r\n\t\t\t\t\t}\r\n\t\t\t\t\treader.readAsDataURL(input.files[0]);\r\n\t\t\t\t}\r\n\t\t\t}";
+    			t18 = space();
+    			create_component(modal0.$$.fragment);
+    			t19 = space();
     			create_component(modal1.$$.fragment);
     			add_location(h2, file, 40, 2, 1141);
     			attr_dev(button0, "class", "btn btn-primary svelte-sqk6zg");
@@ -4508,11 +4517,16 @@ var app = (function () {
     			attr_dev(input, "capture", "user");
     			attr_dev(input, "accept", "image/*");
     			attr_dev(input, "class", "form-control");
+    			input.multiple = true;
     			add_location(input, file, 69, 3, 2223);
+    			attr_dev(div5, "id", "photos");
     			attr_dev(div5, "class", "row");
-    			add_location(div5, file, 67, 2, 2135);
-    			attr_dev(div6, "class", "container p-2");
-    			add_location(div6, file, 39, 1, 1110);
+    			add_location(div5, file, 71, 3, 2326);
+    			attr_dev(div6, "class", "row");
+    			add_location(div6, file, 67, 2, 2135);
+    			add_location(script, file, 76, 2, 2388);
+    			attr_dev(div7, "class", "container p-2");
+    			add_location(div7, file, 39, 1, 1110);
     			add_location(main, file, 38, 0, 1101);
     		},
     		l: function claim(nodes) {
@@ -4520,14 +4534,14 @@ var app = (function () {
     		},
     		m: function mount(target, anchor) {
     			insert_dev(target, main, anchor);
-    			append_dev(main, div6);
-    			append_dev(div6, h2);
-    			append_dev(div6, t1);
-    			append_dev(div6, button0);
-    			append_dev(div6, t3);
-    			append_dev(div6, button1);
-    			append_dev(div6, t5);
-    			append_dev(div6, div3);
+    			append_dev(main, div7);
+    			append_dev(div7, h2);
+    			append_dev(div7, t1);
+    			append_dev(div7, button0);
+    			append_dev(div7, t3);
+    			append_dev(div7, button1);
+    			append_dev(div7, t5);
+    			append_dev(div7, div3);
     			append_dev(div3, div0);
     			mount_component(search, div0, null);
     			append_dev(div3, t6);
@@ -4540,19 +4554,23 @@ var app = (function () {
     			append_dev(div1, button3);
     			append_dev(button3, t9);
     			append_dev(button3, span1);
-    			append_dev(div6, t10);
-    			if (if_block) if_block.m(div6, null);
-    			append_dev(div6, t11);
-    			append_dev(div6, div4);
+    			append_dev(div7, t10);
+    			if (if_block) if_block.m(div7, null);
+    			append_dev(div7, t11);
+    			append_dev(div7, div4);
     			mount_component(list, div4, null);
-    			append_dev(div6, t12);
+    			append_dev(div7, t12);
+    			append_dev(div7, div6);
+    			append_dev(div6, label);
+    			append_dev(div6, t14);
+    			append_dev(div6, input);
+    			append_dev(div6, t15);
     			append_dev(div6, div5);
-    			append_dev(div5, label);
-    			append_dev(div5, t14);
-    			append_dev(div5, input);
-    			append_dev(main, t15);
+    			append_dev(div7, t16);
+    			append_dev(div7, script);
+    			append_dev(main, t18);
     			mount_component(modal0, main, null);
-    			append_dev(main, t16);
+    			append_dev(main, t19);
     			mount_component(modal1, main, null);
     			current = true;
 
@@ -4575,7 +4593,7 @@ var app = (function () {
     					if_block = create_if_block(ctx);
     					if_block.c();
     					transition_in(if_block, 1);
-    					if_block.m(div6, t11);
+    					if_block.m(div7, t11);
     				}
     			} else if (if_block) {
     				group_outros();

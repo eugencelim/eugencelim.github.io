@@ -67,8 +67,29 @@
 		</div>
 		<div class="row">			
 			<label for="imageFile" class="fs-3">Upload a photo</label>
-			<input type="file" id="imageFile" capture="user" accept="image/*" class="form-control">
+			<input type="file" id="imageFile" capture="user" accept="image/*" class="form-control" multiple>
+
+			<div id="photos" class="row">
+				
+			</div>
 		</div>
+
+		<script>
+			document.getElementById("imageFile").addEventListener("change",function(){
+				readURL(this)
+			})
+
+			function readURL(input) {
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+					reader.onload = function (e) {
+						html = `<div class="m-2 col"><img src="${e.target.result}" class="img-fluid"/></div>`
+						$("#photos").append(html)
+					}
+					reader.readAsDataURL(input.files[0]);
+				}
+			}
+		</script>
 	</div>
 	
 	<Modal modalId=addProductModal>
