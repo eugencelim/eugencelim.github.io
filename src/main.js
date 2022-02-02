@@ -12,7 +12,7 @@ if ('serviceWorker' in navigator) {
 	  navigator.serviceWorker.register("/sw.js").then(function(registration) {
 		// Registration was successful
 		console.log('ServiceWorker registration successful with scope: ', registration.scope);
-		//displayNotification("Service Worker Activated.");
+		registration.sync.register('formData')
 		registration.pushManager.getSubscription().then(function(sub) {
 			if (sub === null) {
 			  // Update UI to ask user to register for Push

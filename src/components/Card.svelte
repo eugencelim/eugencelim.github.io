@@ -23,20 +23,44 @@
     }
     
     function deleteProduct(){
-        let product_list = $products
-        product_list = product_list.filter(p => {
-            return p.id !== productId;
+        var data = {}
+        fetch('http://localhost:8000/api/product/' + productId, {
+            method: 'DELETE',
         })
-        products.set(product_list);
-        alert(`${productName} has been deleted.`);
+        // fetch('http://localhost:8000/api/product/' + productId, {
+        //     method: 'DELETE',
+        // }).then(response => {
+        //     if(response.ok){
+        //         return response.json()
+        //     }
+        //     else{
+        //         throw new Error("Error")
+        //     }
+        // }).then(res => {
+        //     if(res.status){
+        //         let product_list = $products
+        //         product_list = product_list.filter(p => {
+        //             return p.id !== productId;
+        //         })
+        //         products.set(product_list);
+        //         alert(res.result);
 
-        let cart_list = $cart_items
-        if(cart_list.has(productId)){
-            if(cart_list.delete(productId)){
-                cart_items.set(cart_list);
-            }
-        }
-        console.log(cart_list);
+        //         let cart_list = $cart_items
+        //         if(cart_list.has(productId)){
+        //             if(cart_list.delete(productId)){
+        //                 cart_items.set(cart_list);
+        //             }
+        //         }
+        //     }
+        // }).catch(e => {
+        //     console.log("Offline Mode")
+        //     let ans = window.confirm("Seems like you are offline, Do you wish to retry this request after you online?")
+        //     if(ans){
+        //         //Without queuing
+        //         //Save Form instead
+        //         console.log(ans)
+        //     }
+        // });
     }
 
     function onHover(e){

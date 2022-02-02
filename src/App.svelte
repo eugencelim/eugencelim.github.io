@@ -1,5 +1,5 @@
 <script>
-	import {products} from "./stores"
+	import {products,searched_products,filtered_products} from "./stores"
 	import List from "./components/List.svelte"
 	import Search from "./components/Search.svelte"
 	import Form from "./components/Form.svelte"
@@ -8,6 +8,7 @@
 	import Modal from "./components/Modal.svelte";
 	import Sort from "./components/Sort.svelte";
 	import {slide} from "svelte/transition";	
+	import {fetchApiData} from "./components/fetch"
 	// import { PictureSelector} from "./components/PictureSelector.svelte"
 	import { onMount } from "svelte";
 	
@@ -18,6 +19,14 @@
 		isFilterShow = !isFilterShow;
 	}
 	
+	onMount(async function(){
+		let json = await fetchApiData("http://localhost:8000/api/products/")
+		console.log(json)
+		products.set(json)
+		searched_products.set(json)
+		filtered_products.set(json)
+	})
+
 	function displayNotification() {
     	if (Notification.permission == 'granted') {			
 			navigator.serviceWorker.getRegistration().then(function(reg) {
@@ -33,7 +42,15 @@
 		Notification.requestPermission(function(status) {
     		console.log('Notification permission status:', status);
 		});
-	}	
+	}
+
+	function sendMessage(){
+		const client2SW = new BroadcastChannel('c2s')
+		client2SW.postMessage({
+			data:"Test"
+		})
+	}
+	
 </script>
 
 <main>
@@ -41,6 +58,7 @@
 		<h2>Product Available</h2>
 		<button class="btn btn-primary" on:click={displayNotification}>Push Notification</button>
 		<button class="btn btn-primary" on:click={requestPermission}>Request Notification Permission</button>
+		<button class="btn btn-secondary" on:click={sendMessage}>Send Message</button>
 		<div class="row mb-3">
 			<div class="col">
 				<Search toggleFunction={toggleFilter}/>
